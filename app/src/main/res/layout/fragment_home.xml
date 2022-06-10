@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.home.HomeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:src="@drawable/quran" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sukanegara, Kec. Jonggol"
+                android:textAlignment="center" />
+
+            <TextView
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ashar : 15:00 WIB"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tanggal : 12/12/2019"
+                android:textAlignment="center" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.hadisyah.verticaliconbutton.VerticalIconButton
+                                android:layout_width="150dp"
+                                android:id="@+id/btn_quran"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:elevation="3dp"
+                                android:fadingEdgeLength="@dimen/cardview_compat_inset_shadow"
+                                app:cardElevation="3dp"
+                                app:n_button_background_color_normal="#FB8C00"
+                                app:n_button_text="Quran"
+                                app:n_button_text_size="6sp"
+                                app:n_icon="@drawable/quran"
+                                app:n_icon_weight="90" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.hadisyah.verticaliconbutton.VerticalIconButton
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:elevation="3dp"
+                                android:fadingEdgeLength="@dimen/cardview_compat_inset_shadow"
+                                app:cardElevation="3dp"
+                                app:n_button_background_color_normal="#6A15F3"
+                                app:n_button_text="Jadwal Sholat"
+                                app:n_button_text_size="6sp"
+                                app:n_icon="@drawable/clock"
+                                app:n_icon_weight="90" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.hadisyah.verticaliconbutton.VerticalIconButton
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:elevation="3dp"
+                                android:fadingEdgeLength="@dimen/cardview_compat_inset_shadow"
+                                app:cardElevation="3dp"
+                                app:n_button_background_color_normal="#FB00D1"
+                                app:n_button_text="Arah Kiblat"
+                                app:n_button_text_size="6sp"
+                                app:n_icon="@drawable/kaaba"
+                                app:n_icon_weight="90" />
+
+                        </LinearLayout>
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_margin="1dp"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <com.hadisyah.verticaliconbutton.VerticalIconButton-->
+<!--                                android:layout_width="150dp"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_margin="5dp"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:elevation="3dp"-->
+<!--                                android:fadingEdgeLength="@dimen/cardview_compat_inset_shadow"-->
+<!--                                app:cardElevation="3dp"-->
+<!--                                app:n_button_background_color_normal="#AFAD06"-->
+<!--                                app:n_button_text="Ziarah"-->
+<!--                                app:n_button_text_size="6sp"-->
+<!--                                app:n_icon="@drawable/cementery"-->
+<!--                                app:n_icon_weight="90" />-->
+
+<!--                        </LinearLayout>-->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.hadisyah.verticaliconbutton.VerticalIconButton
+                                android:layout_width="160dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:elevation="3dp"
+                                android:fadingEdgeLength="@dimen/cardview_compat_inset_shadow"
+                                app:cardElevation="3dp"
+                                app:n_button_background_color_normal="#34A105"
+                                app:n_button_text="Tutorial Ibadah"
+                                app:n_button_text_size="6sp"
+                                app:n_icon="@drawable/praying"
+                                app:n_icon_weight="90" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.hadisyah.verticaliconbutton.VerticalIconButton
+                                android:layout_width="160dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:elevation="3dp"
+                                android:fadingEdgeLength="@dimen/cardview_compat_inset_shadow"
+                                app:cardElevation="3dp"
+                                app:n_button_background_color_normal="#00FBB4"
+                                app:n_button_text="Khutbah"
+                                app:n_button_text_size="6sp"
+                                app:n_icon="@drawable/rosary"
+                                app:n_icon_weight="90" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.hadisyah.verticaliconbutton.VerticalIconButton
+                                android:layout_width="160dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:elevation="3dp"
+                                android:fadingEdgeLength="@dimen/cardview_compat_inset_shadow"
+                                app:cardElevation="3dp"
+                                app:n_button_background_color_normal="#00B4FB"
+                                app:n_button_text="Ramadhan"
+                                app:n_button_text_size="6sp"
+                                app:n_icon="@drawable/mosque"
+                                app:n_icon_weight="90" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.hadisyah.verticaliconbutton.VerticalIconButton
+                                android:id="@+id/btnDzikir"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:elevation="3dp"
+                                android:fadingEdgeLength="@dimen/cardview_compat_inset_shadow"
+                                app:cardElevation="3dp"
+                                app:n_button_background_color_normal="#167981"
+                                app:n_button_text="Dzikir"
+                                app:n_button_text_size="6sp"
+                                app:n_icon="@drawable/openhands"
+                                app:n_icon_weight="90" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.hadisyah.verticaliconbutton.VerticalIconButton
+                                android:id="@+id/btnTahlil"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:elevation="3dp"
+                                android:fadingEdgeLength="@dimen/cardview_compat_inset_shadow"
+                                app:cardElevation="3dp"
+                                app:n_button_background_color_normal="#FB8C00"
+                                app:n_button_text="Tahlil"
+                                app:n_button_text_size="6sp"
+                                app:n_icon="@drawable/quran"
+                                app:n_icon_weight="90" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.hadisyah.verticaliconbutton.VerticalIconButton
+                                android:id="@+id/btnTasbih"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:elevation="3dp"
+                                android:fadingEdgeLength="@dimen/cardview_compat_inset_shadow"
+                                app:cardElevation="3dp"
+                                app:n_button_background_color_normal="#167981"
+                                app:n_button_text="Tasbih"
+                                app:n_button_text_size="6sp"
+                                app:n_icon="@drawable/openhands"
+                                app:n_icon_weight="90" />
+
+                        </LinearLayout>
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_margin="1dp"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <com.hadisyah.verticaliconbutton.VerticalIconButton-->
+<!--                                android:layout_width="150dp"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_margin="5dp"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:elevation="3dp"-->
+<!--                                android:fadingEdgeLength="@dimen/cardview_compat_inset_shadow"-->
+<!--                                app:cardElevation="3dp"-->
+<!--                                app:n_button_background_color_normal="#6A15F3"-->
+<!--                                app:n_button_text="Zakat &amp; Donasi"-->
+<!--                                app:n_button_text_size="6sp"-->
+<!--                                app:n_icon="@drawable/clock"-->
+<!--                                app:n_icon_weight="90" />-->
+
+<!--                        </LinearLayout>-->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.hadisyah.verticaliconbutton.VerticalIconButton
+                                android:layout_width="160dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:elevation="3dp"
+                                android:fadingEdgeLength="@dimen/cardview_compat_inset_shadow"
+                                app:cardElevation="3dp"
+                                app:n_button_background_color_normal="#FB00D1"
+                                app:n_button_text="Maulid"
+                                app:n_button_text_size="6sp"
+                                app:n_icon="@drawable/kaaba"
+                                app:n_icon_weight="90" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.hadisyah.verticaliconbutton.VerticalIconButton
+                                android:id="@+id/btnZakat"
+                                android:layout_width="160dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:elevation="3dp"
+                                android:fadingEdgeLength="@dimen/cardview_compat_inset_shadow"
+                                app:cardElevation="3dp"
+                                app:n_button_background_color_normal="#AFAD06"
+                                app:n_button_text="Kalkulator Zakat"
+                                app:n_button_text_size="6sp"
+                                app:n_icon="@drawable/calculator"
+                                app:n_icon_weight="90" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.hadisyah.verticaliconbutton.VerticalIconButton
+                                android:id="@+id/btnKalenderHijriyah"
+                                android:layout_width="160dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:elevation="3dp"
+                                android:fadingEdgeLength="@dimen/cardview_compat_inset_shadow"
+                                app:cardElevation="3dp"
+                                app:n_button_background_color_normal="#34A105"
+                                app:n_button_text="Kalender Hijriyah"
+                                app:n_button_text_size="6sp"
+                                app:n_icon="@drawable/praying"
+                                app:n_icon_weight="90" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_baseline_chevron_right_24"
+                    android:text="Headline" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/txtHeadline"
+                            style="@style/TextAppearance.AppCompat.Subhead.Inverse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:background="#A3DD67"
+                            android:padding="3dp"
+                            android:text="Nasional" />
+
+                        <TextView
+                            android:id="@+id/txtSubHeadline"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtHeadline"
+                            android:layout_toLeftOf="@+id/img1"
+                            android:text="lorem ipsum dolor sit amet, consecte dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nu" />
+
+                        <ImageView
+                            android:id="@+id/img1"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="10dp"
+                            android:src="@drawable/quran" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/txtHeadline5"
+                            style="@style/TextAppearance.AppCompat.Subhead.Inverse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:background="#A3DD67"
+                            android:padding="3dp"
+                            android:text="Nasional" />
+
+                        <TextView
+                            android:id="@+id/txtSubHeadline5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtHeadline5"
+                            android:layout_toLeftOf="@+id/img5"
+                            android:text="lorem ipsum dolor sit amet, consecte dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nu" />
+
+                        <ImageView
+                            android:id="@+id/img5"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="10dp"
+                            android:src="@drawable/quran" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/txtHeadline1"
+                            style="@style/TextAppearance.AppCompat.Subhead.Inverse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:background="#A3DD67"
+                            android:padding="3dp"
+                            android:text="Nasional" />
+
+                        <TextView
+                            android:id="@+id/txtSubHeadline1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtHeadline1"
+                            android:layout_toLeftOf="@+id/img2"
+                            android:text="lorem ipsum dolor sit amet, consecte dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nu" />
+
+                        <ImageView
+                            android:id="@+id/img2"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="10dp"
+                            android:src="@drawable/quran" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
