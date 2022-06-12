@@ -1,23 +1,18 @@
 package com.trq.muslimapp.ui.home.quran.network
 
-import com.trq.muslimapp.ui.home.quran.model.ResponseDetailSurah
-import com.trq.muslimapp.ui.home.quran.model.ResponseSurah
-import com.trq.muslimapp.ui.home.tahlil.model.ResponseYasin
-import retrofit2.http.GET
-import retrofit2.http.Path
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
-interface ApiService {
+class ApiService {
 
-
-    @GET("surah")
-    fun getSurah(): retrofit2.Call<ResponseSurah>
-
-    @GET("surah/number")
-    fun getSurahNumber(
-        @Path("number") number: Int
-    ): retrofit2.Call<ResponseDetailSurah>
-
-    @GET("surah/36")
-    fun getYasin(): retrofit2.Call<ResponseYasin>
-
+    companion object {
+        private const val BASE_URL = "https://api.npoint.io/"
+        fun getQuran(): ApiInterface {
+            val retrofit = Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+            return retrofit.create(ApiInterface::class.java)
+        }
+    }
 }

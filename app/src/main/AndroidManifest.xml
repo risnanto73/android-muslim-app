@@ -14,6 +14,9 @@
         android:theme="@style/Theme.MuslimApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.home.jadwalsholat.JadwalSholatActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.home.tasbih.TasbihActivity"
             android:exported="false" />
         <activity
@@ -21,9 +24,6 @@
             android:exported="false" />
         <activity
             android:name=".ui.home.quran.SurahActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.home.tahlil.TahlilActivity"
             android:exported="false" />
         <activity
             android:name=".ui.home.hijriyah.HijriyahActivity"

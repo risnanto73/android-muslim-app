@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.trq.muslimapp.databinding.FragmentHomeBinding
 import com.trq.muslimapp.ui.home.hijriyah.HijriyahActivity
 import com.trq.muslimapp.ui.home.quran.SurahActivity
-import com.trq.muslimapp.ui.home.tahlil.TahlilActivity
 import com.trq.muslimapp.ui.home.tasbih.TasbihActivity
 import com.trq.muslimapp.ui.home.zakat.ZakatActivity
 
@@ -32,11 +31,6 @@ class HomeFragment : Fragment() {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-        binding.btnTahlil.setOnClickListener{
-            val intent = Intent(activity, TahlilActivity::class.java)
-            startActivity(intent)
-        }
 
         binding.btnQuran.setOnClickListener {
             val i = Intent(activity, SurahActivity::class.java)

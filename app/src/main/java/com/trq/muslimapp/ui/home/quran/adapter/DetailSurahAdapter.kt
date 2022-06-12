@@ -6,30 +6,46 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.trq.muslimapp.R
-import com.trq.muslimapp.ui.home.quran.model.AyahsItem
-import com.trq.muslimapp.ui.home.quran.model.ResponseDetailSurah
+import com.trq.muslimapp.ui.home.quran.model.ModelAyat
+import kotlinx.android.synthetic.main.item_row_detail_surah.view.*
+import java.util.ArrayList
 
-class DetailSurahAdapter(val dataDetailSurah: List<AyahsItem?>?) : RecyclerView.Adapter<DetailSurahAdapter.MyViewHolder>() {
-    class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val textVerse = view.findViewById<TextView>(R.id.tvVerseId)
-        val tvArabic = view.findViewById<TextView>(R.id.tvArabic)
-        val tvTranslate = view.findViewById<TextView>(R.id.tvTerjemahan)
+class DetailSurahAdapter : RecyclerView.Adapter<DetailSurahAdapter.ViewHolder>() {
+    private val modelAyatList = ArrayList<ModelAyat>()
+
+    fun setAdapter(items: ArrayList<ModelAyat>) {
+        modelAyatList.clear()
+        modelAyatList.addAll(items)
+        notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_row_detail_surah, parent, false)
-        return MyViewHolder(view)
+        return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val dataDetail = dataDetailSurah?.get(position)
-        holder.textVerse.text = dataDetail?.verseId.toString()
-        holder.tvArabic.text = dataDetail?.ayahText
-        holder.tvTranslate.text = dataDetail?.indoText
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val data = modelAyatList[position]
 
+        holder.tvNomorAyat.text = data.nomor
+        holder.tvArabic.text = data.arab
+        holder.tvTerjemahan.text = data.indo
     }
 
     override fun getItemCount(): Int {
-        return dataDetailSurah?.size!!
+        return modelAyatList.size
+    }
+
+    //Class Holder
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var tvNomorAyat: TextView
+        var tvArabic: TextView
+        var tvTerjemahan: TextView
+
+        init {
+            tvNomorAyat = itemView.tvVerseId
+            tvArabic = itemView.tvArabic
+            tvTerjemahan = itemView.tvTerjemahan
+        }
     }
 }

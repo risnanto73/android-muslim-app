@@ -52,11 +52,11 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="5dp"
+                android:fontFamily="@font/poppins_regular"
                 android:text="@string/app_name"
-                android:textColor="@android:color/black"
+                style="@style/TextAppearance.Material3.BodyLarge"
                 android:textIsSelectable="true"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textSize="25sp" />
 
             <TextView
                 android:id="@+id/tvTerjemahan"
@@ -70,7 +70,7 @@
                 android:text="@string/app_name"
                 android:textIsSelectable="true"
                 android:textSize="12sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/poppins_light"/>
 
         </RelativeLayout>
 

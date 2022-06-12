@@ -188,29 +188,6 @@
                                 android:elevation="3dp"
                                 android:fadingEdgeLength="@dimen/cardview_compat_inset_shadow"
                                 app:cardElevation="3dp"
-                                app:n_button_background_color_normal="#00FBB4"
-                                app:n_button_text="Khutbah"
-                                app:n_button_text_size="6sp"
-                                app:n_icon="@drawable/rosary"
-                                app:n_icon_weight="90" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="1dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <com.hadisyah.verticaliconbutton.VerticalIconButton
-                                android:layout_width="160dp"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="5dp"
-                                android:layout_weight="1"
-                                android:elevation="3dp"
-                                android:fadingEdgeLength="@dimen/cardview_compat_inset_shadow"
-                                app:cardElevation="3dp"
                                 app:n_button_background_color_normal="#00B4FB"
                                 app:n_button_text="Ramadhan"
                                 app:n_button_text_size="6sp"
@@ -246,30 +223,6 @@
                                 app:n_button_text="Dzikir"
                                 app:n_button_text_size="6sp"
                                 app:n_icon="@drawable/openhands"
-                                app:n_icon_weight="90" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="1dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <com.hadisyah.verticaliconbutton.VerticalIconButton
-                                android:id="@+id/btnTahlil"
-                                android:layout_width="150dp"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="5dp"
-                                android:layout_weight="1"
-                                android:elevation="3dp"
-                                android:fadingEdgeLength="@dimen/cardview_compat_inset_shadow"
-                                app:cardElevation="3dp"
-                                app:n_button_background_color_normal="#FB8C00"
-                                app:n_button_text="Tahlil"
-                                app:n_button_text_size="6sp"
-                                app:n_icon="@drawable/quran"
                                 app:n_icon_weight="90" />
 
                         </LinearLayout>
@@ -336,10 +289,10 @@
                                 android:elevation="3dp"
                                 android:fadingEdgeLength="@dimen/cardview_compat_inset_shadow"
                                 app:cardElevation="3dp"
-                                app:n_button_background_color_normal="#FB00D1"
-                                app:n_button_text="Maulid"
+                                app:n_button_background_color_normal="#00FBB4"
+                                app:n_button_text="Khutbah"
                                 app:n_button_text_size="6sp"
-                                app:n_icon="@drawable/kaaba"
+                                app:n_icon="@drawable/rosary"
                                 app:n_icon_weight="90" />
 
                         </LinearLayout>
