@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.trq.muslimapp.databinding.FragmentHomeBinding
 import com.trq.muslimapp.ui.home.hijriyah.HijriyahActivity
+import com.trq.muslimapp.ui.home.qiblah.QiblahActivity
 import com.trq.muslimapp.ui.home.quran.SurahActivity
 import com.trq.muslimapp.ui.home.tasbih.TasbihActivity
 import com.trq.muslimapp.ui.home.zakat.ZakatActivity
@@ -49,6 +50,10 @@ class HomeFragment : Fragment() {
 
         binding.btnTasbih.setOnClickListener {
             startActivity(Intent(activity, TasbihActivity::class.java))
+        }
+
+        binding.btnQiblah.setOnClickListener {
+            startActivity(Intent(activity, QiblahActivity::class.java))
         }
 //        val textView: TextView = binding.textHome
 

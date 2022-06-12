@@ -27,6 +27,9 @@ class SurahActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySurahBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.title = "List Surah"
         //setContentView(R.layout.activity_surah)
 
         setInitLayout()
@@ -39,7 +42,7 @@ class SurahActivity : AppCompatActivity() {
         surahViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(SurahViewModel::class.java)
         surahViewModel.setSurah()
         surahViewModel.getSurah()
-            .observe(this, { modelSurah: ArrayList<ModelSurah> ->
+            .observe(this) { modelSurah: ArrayList<ModelSurah> ->
                 if (modelSurah.size != 0) {
                     surahAdapter.setAdapter(modelSurah)
                     progressDialog.dismiss()
@@ -48,7 +51,7 @@ class SurahActivity : AppCompatActivity() {
                     progressDialog.dismiss()
                 }
                 progressDialog.dismiss()
-            })
+            }
     }
 
     private fun setInitLayout() {
@@ -62,5 +65,10 @@ class SurahActivity : AppCompatActivity() {
         recSurah.adapter = surahAdapter
         recSurah.setHasFixedSize(true)
         recSurah.layoutManager = LinearLayoutManager(this)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

@@ -1,9 +1,14 @@
 package com.trq.muslimapp.ui.home.quran
 
 import android.app.ProgressDialog
+import android.media.AudioManager
+import android.media.MediaPlayer
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.text.Html
+import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,6 +19,7 @@ import com.trq.muslimapp.ui.home.quran.adapter.DetailSurahAdapter
 import com.trq.muslimapp.ui.home.quran.model.ModelAyat
 import com.trq.muslimapp.ui.home.quran.model.ModelSurah
 import com.trq.muslimapp.ui.home.quran.viewmoel.SurahViewModel
+import java.io.IOException
 import java.util.ArrayList
 
 class DetailSurahActivity : AppCompatActivity() {
@@ -24,13 +30,12 @@ class DetailSurahActivity : AppCompatActivity() {
     lateinit var detailAdapter: DetailSurahAdapter
     lateinit var progressDialog: ProgressDialog
     lateinit var surahViewModel: SurahViewModel
-    lateinit var handler: Handler
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailSurahBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        supportActionBar?.setTitle("Detail Surah")
+        supportActionBar?.title = "Detail Surah"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
         // setContentView(R.layout.activity_detail_surah)
@@ -39,6 +44,39 @@ class DetailSurahActivity : AppCompatActivity() {
 
 
         modelSurah = intent.getSerializableExtra(DETAIL_SURAH) as ModelSurah
+
+        if (modelSurah != null) {
+
+            binding.tvSurah.text =" ${modelSurah.nama} (${modelSurah.asma}) : (${modelSurah.ayat.toString()} Ayat)"
+
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) binding.tvKet.text =
+                Html.fromHtml(modelSurah.keterangan, Html.FROM_HTML_MODE_COMPACT) else {
+                binding.tvKet.text = Html.fromHtml(modelSurah.keterangan)
+            }
+
+            binding.fabPlay.setOnClickListener {
+                try {
+                    val mediaPlayer = MediaPlayer()
+                    mediaPlayer.setDataSource(modelSurah.audio)
+                    mediaPlayer.prepare()
+                    mediaPlayer.start()
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                }
+                binding.fabPlay.visibility = View.GONE
+                binding.fabPause.visibility = View.VISIBLE
+            }
+            binding.fabPause.setOnClickListener {
+                binding.fabPlay.visibility = View.VISIBLE
+                binding.fabPause.visibility = View.GONE
+                val mediaPlayer = MediaPlayer()
+                mediaPlayer.stop()
+                mediaPlayer.reset()
+                binding.fabPlay.visibility = View.VISIBLE
+                binding.fabPause.visibility = View.GONE
+            }
+        }
         progressDialog = ProgressDialog(this)
         progressDialog.setTitle("Mohon Tunggu")
         progressDialog.setCancelable(false)

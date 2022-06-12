@@ -72,4 +72,6 @@ dependencies {
     //circle button
     implementation 'com.github.markushi:circlebutton:1.1'
 
+    implementation 'com.github.florent37:expansionpanel:1.2.4'
+
 }

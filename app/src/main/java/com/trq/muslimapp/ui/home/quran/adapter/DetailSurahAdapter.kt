@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.trq.muslimapp.R
 import com.trq.muslimapp.ui.home.quran.model.ModelAyat
+import kotlinx.android.synthetic.main.activity_detail_surah.view.*
 import kotlinx.android.synthetic.main.item_row_detail_surah.view.*
 import java.util.ArrayList
 
@@ -30,6 +31,7 @@ class DetailSurahAdapter : RecyclerView.Adapter<DetailSurahAdapter.ViewHolder>()
         holder.tvNomorAyat.text = data.nomor
         holder.tvArabic.text = data.arab
         holder.tvTerjemahan.text = data.indo
+
     }
 
     override fun getItemCount(): Int {
