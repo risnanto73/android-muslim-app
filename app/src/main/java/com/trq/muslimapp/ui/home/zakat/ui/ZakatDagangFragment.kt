@@ -8,8 +8,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.trq.muslimapp.R
 import com.trq.muslimapp.databinding.FragmentZakatDagangBinding
-import com.trq.muslimapp.rt.api.PiApiConfig
-import com.trq.muslimapp.rt.model.ResponseEmas
 import kotlinx.android.synthetic.main.fragment_zakat_dagang.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -36,19 +34,7 @@ class ZakatDagangFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        PiApiConfig.getApiService().getAllEmas().enqueue(object : Callback<ResponseEmas> {
-            override fun onResponse(call: Call<ResponseEmas>, response: Response<ResponseEmas>) {
-                if (response.isSuccessful) {
-                    val data = response.body()?.emas?.get(0)
-                    binding.hargaEmas.text = formatNumber(data?.hargaemas!!.toInt())
-                    binding.hargaTanggal.text = data.createdAt
-                }
-            }
-            override fun onFailure(call: Call<ResponseEmas>, t: Throwable) {
-                Toast.makeText(activity, t.localizedMessage, Toast.LENGTH_SHORT).show()
-            }
 
-        })
 
         binding.btnHtung.setOnClickListener {
             val nisab = binding.hargaEmas.text.toString().toInt()

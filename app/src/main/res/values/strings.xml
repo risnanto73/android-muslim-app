@@ -119,4 +119,10 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+    <string name="gps_settings_title">GPS settings</string>
+    <string name="gps_settings_text">GPS is not enabled. Do you want to go to settings menu?</string>
+    <string name="settings_button_ok">Settings</string>
+    <string name="settings_button_cancel">Cancel</string>
+    <string name="toast_permission_required">This app requires Access Location</string>
 </resources>
