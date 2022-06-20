@@ -3,10 +3,11 @@ package com.trq.muslimapp.helpers
 import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
+import androidx.fragment.app.FragmentActivity
 import com.google.gson.Gson
-import com.trq.muslimapp.auth.model.DataUser
+import com.trq.muslimapp.auth.model.User
 
-class SharedPreference(activity: Activity) {
+class SharedPreference(activity: FragmentActivity) {
 
     val login = "Login"
     val myPref = "Main_Pref"
@@ -23,23 +24,27 @@ class SharedPreference(activity: Activity) {
     }
 
     fun getStatusLogin():Boolean{
-        return sharedPreference.getBoolean(login, true)
+        return sharedPreference.getBoolean(login, false)
     }
 
-    fun setUser(user: DataUser){
-        val gson = Gson()
-        val json = gson.toJson(user)
-        sharedPreference.edit().putString(user.toString(), json).apply()
+    fun setUser(value: User){
+        // ubah dari data object ke data string
+        val data = Gson().toJson(value, User::class.java)
+        sharedPreference.edit().putString(user, data).apply()
     }
 
-    fun getUser(): DataUser? {
+    fun getUser(): User? {
         val data = sharedPreference.getString(user, null)
         return if (data != null) {
             // ubah dari data string ke data object
-            Gson().fromJson(data, DataUser::class.java)
+            Gson().fromJson(data, User::class.java)
         } else {
             null
         }
+    }
+
+    fun deleteUser(){
+        sharedPreference.edit().remove(user).apply()
     }
 
 }

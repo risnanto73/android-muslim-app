@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit
 object ApiConfigRt {
 
     private const val BASE_URL = "https://muslim.app.tiorisnanto.com/"
-
+    // private const val BASE_URL = "http://paket.siyap.co.id/"
     private val client: Retrofit
 
         get() {

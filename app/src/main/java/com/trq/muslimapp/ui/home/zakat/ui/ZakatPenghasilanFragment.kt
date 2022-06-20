@@ -6,10 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebViewClient
+import android.widget.Toast
 import com.trq.muslimapp.R
+import com.trq.muslimapp.auth.network.ApiConfigRt
 import com.trq.muslimapp.databinding.FragmentZakatPenghasilanBinding
 import com.trq.muslimapp.ui.home.zakat.ZakatActivity
+import com.trq.muslimapp.ui.home.zakat.model.ResponseHargaEmas
 import kotlinx.android.synthetic.main.fragment_zakat_penghasilan.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.text.DateFormat
 import java.text.NumberFormat
 import java.util.*
 
@@ -36,35 +43,61 @@ class ZakatPenghasilanFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnHitung.setOnClickListener {
-            val nisab = 83640000
+        ApiConfigRt.instanceRetrofit.getEmas().enqueue(object : Callback<ResponseHargaEmas> {
+            override fun onResponse(
+                call: Call<ResponseHargaEmas>,
+                response: Response<ResponseHargaEmas>
+            ) {
+                if (response.isSuccessful) {
+                    val hargaEmas = response.body()!!.emas?.get(0)
+                    binding.hargaEmas.text =
+                        "Harga Emas ${formatNumber(hargaEmas!!.hargaemas!!.toInt())}/gram pertanggal ${
+                            DateFormat.getDateTimeInstance().format(Date())
+                        }"
 
+                    binding.hargaEmasHide.text = hargaEmas.hargaemas
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseHargaEmas>, t: Throwable) {
+                Toast.makeText(requireContext(), t.localizedMessage, Toast.LENGTH_SHORT).show()
+            }
+
+        })
+
+        binding.btnHitung.setOnClickListener {
+            val nisab = binding.hargaEmasHide.text.toString().toInt() * 85
+            var isEmpty = false
+            
             val penghasilan = binding.penghasilanPokok.text.toString().trim()
             val pendapatanLain = binding.pendapatanLain.text.toString().trim()
             val pengeluaran = binding.pengeluaranPokok.text.toString().trim()
 
             if (penghasilan.isEmpty()) {
-                binding.penghasilanPokok.error = "Penghasilan tidak boleh kosong"
+                binding.penghasilanPokok.error = "Penghasilan pokok tidak boleh kosong"
+                isEmpty = true
             }
-
+            
             if (pendapatanLain.isEmpty()) {
                 binding.pendapatanLain.error = "Pendapatan lain tidak boleh kosong"
+                isEmpty = true
             }
-
+            
             if (pengeluaran.isEmpty()) {
-                binding.pengeluaranPokok.error = "Pengeluaran tidak boleh kosong"
+                binding.pengeluaranPokok.error = "Pengeluaran pokok tidak boleh kosong"
+                isEmpty = true
             }
-
-            if (penghasilan.isNotEmpty() && pendapatanLain.isNotEmpty() && pengeluaran.isNotEmpty()) {
+            
+            if (!isEmpty){
                 val penghasilanInt = penghasilan.toInt()
                 val pendapatanLainInt = pendapatanLain.toInt()
                 val pengeluaranInt = pengeluaran.toInt()
 
-                val total = penghasilanInt + pendapatanLainInt - pengeluaranInt
+                val total = (penghasilanInt + pendapatanLainInt) - pengeluaranInt
 
                 val zakat = (penghasilanInt + pendapatanLainInt - pengeluaranInt) * 0.025
 
-                if (nisab > total) {
+                if (total <= nisab) {
                     binding.txtHasil.text =
                         "Zakat anda adalah ${formatNumber(zakat.toInt())} selama pertahun dan ${
                             formatNumber(zakat.toInt() / 12)
