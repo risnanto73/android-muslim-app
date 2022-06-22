@@ -48,7 +48,6 @@ class NoteFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         swipeRefreshLayout.setOnRefreshListener {
             sharedPreference = SharedPreference(requireActivity())
-
             val user = sharedPreference.getUser()
             if (user != null) {
                 binding.btnLogin.visibility = View.GONE

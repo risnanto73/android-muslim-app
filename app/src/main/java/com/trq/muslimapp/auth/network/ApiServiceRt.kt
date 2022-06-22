@@ -1,7 +1,11 @@
 package com.trq.muslimapp.auth.network
 
 import com.trq.muslimapp.auth.model.ResponseUser
+import com.trq.muslimapp.auth.model.User
+import com.trq.muslimapp.ui.home.admin.model.ResponseAllUser
 import com.trq.muslimapp.ui.home.berita.model.ResponseBerita
+import com.trq.muslimapp.ui.home.doaharian.model.ResponseDoaHarian
+import com.trq.muslimapp.ui.home.headline.model.ResponseKhutbahBerita
 import com.trq.muslimapp.ui.home.khutbah.model.ResponseKhutbah
 import com.trq.muslimapp.ui.home.zakat.model.ResponseHargaEmas
 import com.trq.muslimapp.ui.note.model.ResponseNote
@@ -36,6 +40,9 @@ interface ApiServiceRt {
     @GET("api/allKhutbah")
     fun getKhutbah(): Call<ResponseKhutbah>
 
+    @GET("api/allDzikir")
+    fun getDzikir(): Call<ResponseDoaHarian>
+
     @FormUrlEncoded
     @POST("api/storeMutabaah")
     fun addNote(
@@ -44,8 +51,8 @@ interface ApiServiceRt {
         @Field("deskripsi") deskripsi: String? = null,
     ): Call<ResponseNote>
 
-
-    @GET("api/allMutabaah/")  // get all note
+    // get all note
+    @GET("api/allMutabaah/")
     fun getNote(): Call<ResponseNoteAll>
 
     @GET("api/detailMutabaah/{user_id}")
@@ -67,4 +74,33 @@ interface ApiServiceRt {
         @Path("id") id: Int
     ): Call<ResponseNote>
 
+
+//    @Multipart
+//    @FormUrlEncoded
+//    @POST("api/updateUser/{id}")
+//    fun updateUser(
+//        @Path("id") id: String,
+//        @Part("gambar") gambar: String? = null,
+//        @Field("name") name: String? = null,
+//        @Field("email") email: String? = null,
+//    ): Call<ResponseUser>
+
+    @GET("api/allBeritadanKhutbah")
+    fun getBeritaDanKhutbah(): Call<ResponseKhutbahBerita>
+
+    @FormUrlEncoded
+    @POST("api/editPass/{id}")
+    fun editPass(
+        @Path("id") id: Int,
+        @Field("old_password") old_password: String,
+        @Field("new_password") new_password: String
+    ): Call<ResponseUser>
+
+    @GET("api/allUser")
+    fun getAllUser() : Call<ResponseAllUser>
+
+    @GET("api/resetPass/{id}")
+    fun resetPass(
+        @Path("id") id: Int
+    ) : Call<ResponseUser>
 }

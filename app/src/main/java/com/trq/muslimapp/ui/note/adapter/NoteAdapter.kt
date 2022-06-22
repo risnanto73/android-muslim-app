@@ -28,7 +28,6 @@ class NoteAdapter(val dataNote: List<MutabaahItem?>?, val context: Context) :
         val title = view.findViewById<TextView>(R.id.catatan)
         val content = view.findViewById<TextView>(R.id.content)
         val noteId = view.findViewById<TextView>(R.id.noteId)
-        val btnDelete = view.findViewById<ImageButton>(R.id.btnDelete)
 
     }
 

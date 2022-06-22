@@ -40,7 +40,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start|center_vertical"
-                    android:text="Keterangan"
+                    android:hint="Keterangan"
                     android:textColor="@color/white"
                     android:fontFamily="@font/poppins_regular"
                     android:textIsSelectable="true"
@@ -67,10 +67,11 @@
                     android:fontFamily="@font/poppins_regular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    style="@style/TextAppearance.AppCompat.Subhead.Inverse"
                     android:layout_gravity="center_vertical"
                     android:justificationMode="inter_word"
-                    android:textColor="@android:color/black"
-                    android:textSize="12sp" />
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
 
 
             </com.github.florent37.expansionpanel.ExpansionLayout>

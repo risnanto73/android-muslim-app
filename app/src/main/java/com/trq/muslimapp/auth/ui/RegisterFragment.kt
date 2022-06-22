@@ -1,5 +1,6 @@
 package com.trq.muslimapp.auth.ui
 
+import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -21,6 +22,9 @@ class RegisterFragment : Fragment() {
 
     private lateinit var binding: FragmentRegisterBinding
     lateinit var sharedPreference: SharedPreference
+    val progressDialog: ProgressDialog by lazy {
+        ProgressDialog(context)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,6 +63,10 @@ class RegisterFragment : Fragment() {
             binding.edtPassword.error = "Please fill all fields"
         }
 
+        progressDialog.setMessage("Loading...")
+        progressDialog.setCancelable(false)
+        progressDialog.show()
+
         ApiConfigRt.instanceRetrofit.register(name, email, password)
             .enqueue(object : retrofit2.Callback<ResponseUser> {
                 override fun onResponse(
@@ -66,6 +74,7 @@ class RegisterFragment : Fragment() {
                     response: Response<ResponseUser>
                 ) {
                     val response = response.body()
+                    progressDialog.dismiss()
                     if (response != null) {
                         try {
                             if (response.status == 0) {
@@ -76,6 +85,7 @@ class RegisterFragment : Fragment() {
                                 sharedPreference.setUser(response.user!!)
                                 startActivity(Intent(activity, MainActivity::class.java))
                                 activity?.finish()
+                                Toast.makeText(activity, "${response.message}", Toast.LENGTH_SHORT).show()
                             }
                         } catch (e: Exception) {
                             Toast.makeText(activity, e.message, Toast.LENGTH_SHORT).show()

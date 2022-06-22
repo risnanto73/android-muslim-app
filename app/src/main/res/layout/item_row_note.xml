@@ -33,7 +33,7 @@
         <View
             android:id="@+id/line"
             android:padding="3dp"
-            android:layout_marginVertical="3dp"
+            android:layout_marginVertical="2dp"
             android:layout_alignBottom="@id/catatan"
             android:layout_width="match_parent"
             android:layout_height="3dp"

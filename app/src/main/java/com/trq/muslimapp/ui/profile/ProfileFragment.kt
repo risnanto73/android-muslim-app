@@ -1,7 +1,8 @@
 package com.trq.muslimapp.ui.profile
 
-import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,8 @@ import com.trq.muslimapp.R
 import com.trq.muslimapp.auth.ui.AuthActivity
 import com.trq.muslimapp.databinding.FragmentProfileBinding
 import com.trq.muslimapp.helpers.SharedPreference
+import com.trq.muslimapp.ui.profile.changepassword.ChangePasswordActivity
+
 
 class ProfileFragment : Fragment() {
 
@@ -27,8 +30,6 @@ class ProfileFragment : Fragment() {
     ): View {
         binding = FragmentProfileBinding.inflate(layoutInflater)
         return binding.root
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,23 +43,24 @@ class ProfileFragment : Fragment() {
             val urlImage = "http://muslim.app.tiorisnanto.com/storage/${user.gambar}"
             if (user.gambar != null) {
                 Glide.with(requireActivity()).load(urlImage).into(binding.imgUser)
-                binding.edit.visibility = View.VISIBLE
-                binding.add.visibility = View.GONE
+                binding.btnUpdate.visibility = View.VISIBLE
             } else if (user.gambar == null) {
                 Glide.with(this).load("https://ui-avatars.com/api/?name=${user.name}")
                     .into(binding.imgUser)
-                binding.edit.visibility = View.GONE
-                binding.add.visibility = View.VISIBLE
             } else {
                 Glide.with(this).load(R.drawable.user).into(binding.imgUser)
-                binding.edit.visibility = View.GONE
-                binding.add.visibility = View.GONE
             }
-
+            binding.llProfile.visibility = View.VISIBLE
             binding.txtEmail.text = user!!.email
             binding.txtName.text = user.name
             binding.btnLogout.visibility = View.VISIBLE
+
+            binding.btnChangePassword.setOnClickListener {
+                val intent = Intent(requireActivity(), ChangePasswordActivity::class.java)
+                startActivity(intent)
+            }
         } else {
+            binding.llProfile.visibility = View.GONE
             binding.txtEmail.setText(" ")
             binding.txtName.setText(" ")
             binding.btnLogin.visibility = View.VISIBLE
@@ -66,6 +68,16 @@ class ProfileFragment : Fragment() {
                 startActivity(Intent(requireActivity(), AuthActivity::class.java))
             }
             binding.btnLogout.visibility = View.GONE
+        }
+
+        binding.btnUpdate.setOnClickListener {
+            val intent = Intent(requireActivity(), UpdateProfileActivity::class.java)
+            val bitmap = binding.imgUser.drawable as BitmapDrawable
+
+            intent.putExtra("user", binding.txtName.text.toString())
+            intent.putExtra("email", binding.txtEmail.text.toString())
+            intent.putExtra("image", bitmap.bitmap)
+            startActivity(intent)
         }
 
 

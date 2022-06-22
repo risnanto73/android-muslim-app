@@ -283,6 +283,22 @@
 
         </HorizontalScrollView>
 
+        <com.hadisyah.verticaliconbutton.VerticalIconButton
+            android:id="@+id/btnListUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="5dp"
+            android:elevation="3dp"
+            android:fadingEdgeLength="@dimen/cardview_compat_inset_shadow"
+            android:visibility="gone"
+            app:cardElevation="3dp"
+            app:n_button_background_color_normal="#4A504E"
+            app:n_button_text="List User &amp; admin"
+            app:n_button_text_size="6sp"
+            app:n_icon="@drawable/user"
+            app:n_icon_weight="90" />
+
         <TextView
             android:id="@+id/headLine"
             style="@style/TextAppearance.MaterialComponents.Headline6"
@@ -292,6 +308,17 @@
             android:padding="10dp"
             android:text="Headline" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewBeritakhutbah"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_row_berita" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewBerita"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_row_berita" />
 
     </LinearLayout>
 

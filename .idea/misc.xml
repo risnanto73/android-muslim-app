@@ -6,11 +6,14 @@
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/drawable/ic_baseline_arrow_back_ios_new_24.xml" value="0.2125" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/drawable/round_button.xml" value="0.156" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/activity_add_note.xml" value="0.22030825022665457" />
+        <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/activity_admin.xml" value="0.27697189483227563" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/activity_auth.xml" value="0.24478694469628287" />
+        <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/activity_change_password.xml" value="0.2" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/activity_detail_berita.xml" value="0.31765711842667804" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/activity_detail_khutbah.xml" value="0.22030825022665457" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/activity_detail_quran.xml" value="0.33" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/activity_detail_surah.xml" value="0.33" />
+        <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/activity_detail_user.xml" value="0.23798730734360835" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/activity_doa_harian.xml" value="0.22530996152201796" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/activity_dzikir.xml" value="0.20153985507246377" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/activity_hijriyah.xml" value="0.37681159420289856" />
@@ -26,16 +29,17 @@
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/activity_tahlil.xml" value="0.25" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/activity_tasbih.xml" value="0.2" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/activity_update_note.xml" value="0.11011282908483076" />
+        <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/activity_update_profile.xml" value="0.22530996152201796" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/activity_zakat.xml" value="0.18819655521783182" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/app_bar_main.xml" value="0.1" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/content_main.xml" value="0.3319746376811594" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/content_scrolling.xml" value="0.2006340579710145" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/fragment_berita.xml" value="0.31765711842667804" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/fragment_gallery.xml" value="0.3319746376811594" />
-        <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/fragment_home.xml" value="0.17886374578719308" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/fragment_khutbah.xml" value="0.22030825022665457" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/fragment_login.xml" value="0.24478694469628287" />
-        <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
+        <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/fragment_register.xml" value="0.24478694469628287" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/fragment_slideshow.xml" value="0.3319746376811594" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/fragment_tahlil.xml" value="0.2171350861287398" />
@@ -46,11 +50,12 @@
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/fragment_zakat_penghasilan.xml" value="0.18819655521783182" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/fragment_zakat_tabungan.xml" value="0.25" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/ite_row_note.xml" value="0.22030825022665457" />
+        <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/item_all_user.xml" value="0.25" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/item_row_berita.xml" value="0.31765711842667804" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/item_row_detail_surah.xml" value="0.264" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/item_row_doa_harian.xml" value="0.48659003831417624" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/item_row_khutbah.xml" value="0.33" />
-        <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/item_row_note.xml" value="0.22030825022665457" />
+        <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/item_row_note.xml" value="0.264" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/item_row_surah.xml" value="0.33" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/item_row_tahlil.xml" value="0.20308250226654578" />
         <entry key="..\:/Users/tiola/AndroidStudioProjects/MuslimApp2/app/src/main/res/layout/item_row_yasin.xml" value="0.22" />

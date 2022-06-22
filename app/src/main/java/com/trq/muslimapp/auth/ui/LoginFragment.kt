@@ -1,5 +1,6 @@
 package com.trq.muslimapp.auth.ui
 
+import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -22,6 +23,9 @@ class LoginFragment : Fragment() {
 
     private var _binding: FragmentLoginBinding? = null
     lateinit var sharedPreferences: SharedPreference
+    val progressDialog: ProgressDialog by lazy {
+        ProgressDialog(context)
+    }
 
     private val binding get() = _binding!!
     override fun onCreateView(
@@ -36,10 +40,13 @@ class LoginFragment : Fragment() {
             login()
         }
 
+
+
         return binding.root
     }
 
     private fun login() {
+
         val email = binding.edtEmail.text.toString()
         val password = binding.edtPassword.text.toString()
 
@@ -48,18 +55,24 @@ class LoginFragment : Fragment() {
             binding.edtPassword.error = "Password is required"
         }
 
+        progressDialog.setTitle("Login")
+        progressDialog.setMessage("Loading...")
+        progressDialog.setCancelable(false)
+        progressDialog.show()
+
         ApiConfigRt.instanceRetrofit.login(email, password).enqueue(object : retrofit2.Callback<ResponseUser>{
             override fun onResponse(call: Call<ResponseUser>, response: Response<ResponseUser>) {
                 val response = response.body()
-
+                progressDialog.dismiss()
                 if (response != null) {
                     if (response.status == 0) {
-                        Toast.makeText(activity, response.message, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(activity, "Pastikan data benar", Toast.LENGTH_SHORT).show()
                     } else if (response.status == 1) {
                         sharedPreferences.setStatusLogin(true)
                         sharedPreferences.setUser(response.user!!)
                         startActivity(Intent(activity, MainActivity::class.java))
                         activity?.finish()
+                        Toast.makeText(activity, "${response.message}", Toast.LENGTH_SHORT).show()
                     }
                 }
             }

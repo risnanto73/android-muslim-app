@@ -46,8 +46,7 @@ class AddNoteActivity : AppCompatActivity() {
                     override fun onResponse(call: retrofit2.Call<ResponseNote>, response: retrofit2.Response<ResponseNote>) {
                         if (response.isSuccessful) {
                             Toast.makeText(this@AddNoteActivity, "Success to add note", Toast.LENGTH_SHORT).show()
-                            startActivity(Intent(this@AddNoteActivity, NoteFragment::class.java))
-                            finish()
+                            onBackPressed()
                         } else {
                             Toast.makeText(this@AddNoteActivity, "Failed to add note", Toast.LENGTH_SHORT).show()
                         }
