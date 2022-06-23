@@ -1,8 +1,6 @@
 package com.trq.muslimapp.ui.profile
 
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +14,7 @@ import com.trq.muslimapp.auth.ui.AuthActivity
 import com.trq.muslimapp.databinding.FragmentProfileBinding
 import com.trq.muslimapp.helpers.SharedPreference
 import com.trq.muslimapp.ui.profile.changepassword.ChangePasswordActivity
+import com.trq.muslimapp.ui.profile.updateprofile.UpdateProfileActivity
 
 
 class ProfileFragment : Fragment() {
@@ -72,11 +71,10 @@ class ProfileFragment : Fragment() {
 
         binding.btnUpdate.setOnClickListener {
             val intent = Intent(requireActivity(), UpdateProfileActivity::class.java)
-            val bitmap = binding.imgUser.drawable as BitmapDrawable
-
-            intent.putExtra("user", binding.txtName.text.toString())
-            intent.putExtra("email", binding.txtEmail.text.toString())
-            intent.putExtra("image", bitmap.bitmap)
+            intent.putExtra(UpdateProfileActivity.ID, user?.id.toString() )
+            intent.putExtra(UpdateProfileActivity.EMAIL, user?.email )
+            intent.putExtra(UpdateProfileActivity.NAME, user?.name )
+            intent.putExtra(UpdateProfileActivity.IMAGE, user?.gambar )
             startActivity(intent)
         }
 

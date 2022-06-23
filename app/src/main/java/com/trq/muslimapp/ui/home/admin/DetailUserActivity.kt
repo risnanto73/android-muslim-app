@@ -1,4 +1,4 @@
-package com.trq.muslimapp.ui.home.admin.activity
+package com.trq.muslimapp.ui.home.admin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -46,6 +46,7 @@ class DetailUserActivity : AppCompatActivity() {
 
         Glide.with(this)
             .load(imgUrl)
+            .error(R.drawable.user)
             .into(binding.imgUser)
 
         // setContentView(R.layout.activity_detail_user)

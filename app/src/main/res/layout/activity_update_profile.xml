@@ -6,12 +6,26 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".ui.profile.UpdateProfileActivity">
+    tools:context=".ui.profile.updateprofile.UpdateProfileActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgUser"
         android:layout_width="match_parent"
         android:layout_height="200dp" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/userId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="hitn" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/textImg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="hitn" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"

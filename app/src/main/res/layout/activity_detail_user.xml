@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".ui.home.admin.activity.DetailUserActivity">
+    tools:context=".ui.home.admin.DetailUserActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img_user"
@@ -17,8 +17,8 @@
     <TextView
         android:id="@+id/userId"
         android:hint=""
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
 
     <TextView
         android:id="@+id/txt_email"

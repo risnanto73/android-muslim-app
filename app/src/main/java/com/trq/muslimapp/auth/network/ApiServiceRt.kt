@@ -11,6 +11,7 @@ import com.trq.muslimapp.ui.home.zakat.model.ResponseHargaEmas
 import com.trq.muslimapp.ui.note.model.ResponseNote
 import com.trq.muslimapp.ui.note.model.ResponseNoteAll
 import com.trq.muslimapp.ui.note.model.ResponseUserId
+import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -97,10 +98,26 @@ interface ApiServiceRt {
     ): Call<ResponseUser>
 
     @GET("api/allUser")
-    fun getAllUser() : Call<ResponseAllUser>
+    fun getAllUser(): Call<ResponseAllUser>
 
     @GET("api/resetPass/{id}")
     fun resetPass(
         @Path("id") id: Int
-    ) : Call<ResponseUser>
+    ): Call<ResponseUser>
+
+    @Multipart
+    @POST("api/updateUser/{id}")
+    fun updateProfile(
+        @Path("id") id: Int,
+        @Field("email") email: String? = null,
+        @Part("gambar") gambar: String? = null,
+        @Field("name") name: String? = null,
+    ): Call<ResponseUser>
+
+    @Multipart
+    @POST("api/storeGambar/{id}")
+    fun uploadImage(
+        @Path("id") id: Int,
+        @Part image: MultipartBody.Part
+    ): Call<ResponseUser>
 }

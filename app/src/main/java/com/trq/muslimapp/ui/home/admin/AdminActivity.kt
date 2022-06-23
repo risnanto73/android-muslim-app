@@ -1,6 +1,7 @@
 package com.trq.muslimapp.ui.home.admin
 
 import android.app.ProgressDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ProgressBar
@@ -31,6 +32,10 @@ class AdminActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         setupAllUser()
+
+        binding.btnGo.setOnClickListener {
+            startActivity(Intent(this, OtherMenuActivity::class.java))
+        }
 
     }
 

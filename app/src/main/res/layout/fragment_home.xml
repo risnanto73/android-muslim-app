@@ -294,7 +294,7 @@
             android:visibility="gone"
             app:cardElevation="3dp"
             app:n_button_background_color_normal="#4A504E"
-            app:n_button_text="List User &amp; admin"
+            app:n_button_text="Menu Admin"
             app:n_button_text_size="6sp"
             app:n_icon="@drawable/user"
             app:n_icon_weight="90" />

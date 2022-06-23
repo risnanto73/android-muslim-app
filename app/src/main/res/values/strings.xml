@@ -127,4 +127,5 @@
     <string name="toast_permission_required">This app requires Access Location</string>
     <string name="title_activity_detail_berita">DetailBeritaActivity</string>
     <string name="action_settings">Settings</string>
+
 </resources>

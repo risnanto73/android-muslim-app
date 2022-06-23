@@ -18,7 +18,10 @@
         android:theme="@style/Theme.MuslimApp"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".ui.home.admin.activity.DetailUserActivity"
+            android:name=".ui.home.admin.OtherMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.admin.DetailUserActivity"
             android:exported="false" />
         <activity
             android:name=".ui.home.admin.AdminActivity"
@@ -27,7 +30,7 @@
             android:name=".ui.profile.changepassword.ChangePasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.profile.UpdateProfileActivity"
+            android:name=".ui.profile.updateprofile.UpdateProfileActivity"
             android:exported="false" />
         <activity
             android:name=".ui.home.doaharian.DoaHarianActivity"

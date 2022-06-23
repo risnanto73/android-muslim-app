@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.trq.muslimapp.R
-import com.trq.muslimapp.ui.home.admin.activity.DetailUserActivity
+import com.trq.muslimapp.ui.home.admin.DetailUserActivity
 import com.trq.muslimapp.ui.home.admin.model.DataItem
 
 class AllUserAdapter(val dataUser: List<DataItem?>?) :
@@ -41,7 +41,7 @@ class AllUserAdapter(val dataUser: List<DataItem?>?) :
             .into(holder.imgUser)
 
         holder.itemView.setOnClickListener {
-            val intent = Intent(holder.itemView.context,DetailUserActivity::class.java)
+            val intent = Intent(holder.itemView.context, DetailUserActivity::class.java)
             intent.putExtra(DetailUserActivity.ID, dataUsers?.id.toString() )
             intent.putExtra(DetailUserActivity.EMAIL, dataUsers?.email )
             intent.putExtra(DetailUserActivity.ROLE, dataUsers?.role )
