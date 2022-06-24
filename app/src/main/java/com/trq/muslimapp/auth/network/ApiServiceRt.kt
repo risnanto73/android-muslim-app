@@ -12,6 +12,7 @@ import com.trq.muslimapp.ui.note.model.ResponseNote
 import com.trq.muslimapp.ui.note.model.ResponseNoteAll
 import com.trq.muslimapp.ui.note.model.ResponseUserId
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -35,6 +36,14 @@ interface ApiServiceRt {
     @GET("api/allEmas")
     fun getEmas(): Call<ResponseHargaEmas>
 
+    @FormUrlEncoded
+    @POST("api/updateEmas/{id}")
+    fun editEmas(
+        @Path("id") id: Int,
+        @Field("hargaemas") hargaemas: Int
+    ) : Call<ResponseHargaEmas>
+
+
     @GET("api/allBerita")
     fun getBerita(): Call<ResponseBerita>
 
@@ -56,7 +65,7 @@ interface ApiServiceRt {
     @GET("api/allMutabaah/")
     fun getNote(): Call<ResponseNoteAll>
 
-    @GET("api/detailMutabaah/{user_id}")
+    @GET("api/allMutabaah/{user_id}")
     fun getNoteById(
         @Path("user_id") user_id: String
     ): Call<ResponseUserId>
@@ -109,15 +118,15 @@ interface ApiServiceRt {
     @POST("api/updateUser/{id}")
     fun updateProfile(
         @Path("id") id: Int,
-        @Field("email") email: String? = null,
-        @Part("gambar") gambar: String? = null,
-        @Field("name") name: String? = null,
+        @Part("name") name: RequestBody,
+        @Part("email") email: RequestBody,
+        @Part file: MultipartBody.Part
     ): Call<ResponseUser>
 
-    @Multipart
-    @POST("api/storeGambar/{id}")
-    fun uploadImage(
-        @Path("id") id: Int,
-        @Part image: MultipartBody.Part
-    ): Call<ResponseUser>
+//    @Multipart
+//    @POST("api/storeGambar/{id}")
+//    fun uploadImage(
+//        @Path("id") id: Int,
+//        @Part image: MultipartBody.Part
+//    ): Call<ResponseUser>
 }

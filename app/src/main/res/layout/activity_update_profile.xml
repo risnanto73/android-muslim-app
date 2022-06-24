@@ -14,18 +14,12 @@
         android:layout_height="200dp" />
 
     <TextView
-        android:layout_marginTop="10dp"
         android:id="@+id/userId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
         android:hint="hitn" />
 
-    <TextView
-        android:layout_marginTop="10dp"
-        android:id="@+id/textImg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="hitn" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -53,12 +47,31 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/btn_update_profile"
+    <LinearLayout
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Update Profile" />
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_marginRight="10dp"
+            android:id="@+id/btnCamera"
+            android:text="Camera"/>
+
+        <Button
+            android:id="@+id/btn_update_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:text="Update Profile" />
+
+    </LinearLayout>
+
+
 
 
 </LinearLayout>

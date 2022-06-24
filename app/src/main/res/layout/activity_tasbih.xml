@@ -19,6 +19,7 @@
             android:layout_height="190dp"
             android:layout_margin="10dp"
             android:clickable="true"
+            android:id="@+id/btnSubhanallah"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardBackgroundColor="@android:color/holo_red_light"
             app:cardCornerRadius="8dp">
@@ -59,6 +60,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="160dp"
+            android:id="@+id/btnAlhamdulillah"
             android:layout_height="190dp"
             android:layout_margin="10dp"
             android:clickable="true"
@@ -110,6 +112,7 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/btnLailahaillallah"
             android:layout_width="160dp"
             android:layout_height="190dp"
             android:layout_margin="10dp"
@@ -153,6 +156,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/btnAllahuAkbar"
             android:layout_width="160dp"
             android:layout_height="190dp"
             android:layout_margin="10dp"
@@ -173,7 +177,7 @@
                     android:layout_marginTop="10dp"
 
                     android:textColor="#fff"
-                    android:text="للهُ أَكْبَرُ"
+                    android:text="اَللّهُ اَكْبَرُ"
                     android:textSize="30sp"
                     android:textStyle="bold" />
 

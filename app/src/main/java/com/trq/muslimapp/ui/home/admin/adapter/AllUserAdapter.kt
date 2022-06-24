@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.trq.muslimapp.R
-import com.trq.muslimapp.ui.home.admin.DetailUserActivity
+import com.trq.muslimapp.ui.home.admin.activity.DetailUserActivity
 import com.trq.muslimapp.ui.home.admin.model.DataItem
 
 class AllUserAdapter(val dataUser: List<DataItem?>?) :

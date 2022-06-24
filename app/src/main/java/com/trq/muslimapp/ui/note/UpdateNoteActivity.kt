@@ -24,7 +24,7 @@ class UpdateNoteActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
-        supportActionBar?.title = "Update Note"
+        supportActionBar?.title = "Update Mutabaah"
 
         sharedPreference = SharedPreference(this)
         val user = sharedPreference.getUser()

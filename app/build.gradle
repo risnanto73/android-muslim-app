@@ -80,4 +80,8 @@ dependencies {
 
     implementation 'com.github.dhaval2404:imagepicker:1.5'
 
+    def camerax_version = "1.1.0-beta02"
+    implementation "androidx.camera:camera-camera2:${camerax_version}"
+    implementation "androidx.camera:camera-lifecycle:${camerax_version}"
+    implementation "androidx.camera:camera-view:${camerax_version}"
 }

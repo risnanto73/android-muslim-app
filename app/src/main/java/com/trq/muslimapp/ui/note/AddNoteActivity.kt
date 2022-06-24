@@ -21,7 +21,7 @@ class AddNoteActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
-        supportActionBar?.title = "Add Note"
+        supportActionBar?.title = "Add Mutabaah"
         sharedPreference = SharedPreference(this)
         //get id user
 

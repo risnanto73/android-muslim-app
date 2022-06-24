@@ -1,10 +1,9 @@
-package com.trq.muslimapp.ui.home.admin
+package com.trq.muslimapp.ui.home.admin.activity
 
 import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,7 +15,6 @@ import com.trq.muslimapp.ui.home.admin.model.ResponseAllUser
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.*
 
 class AdminActivity : AppCompatActivity() {
 

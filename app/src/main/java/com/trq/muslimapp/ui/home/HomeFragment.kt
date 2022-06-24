@@ -1,7 +1,6 @@
 package com.trq.muslimapp.ui.home
 
 import android.content.Intent
-import android.opengl.Visibility
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,7 +14,7 @@ import com.trq.muslimapp.R
 import com.trq.muslimapp.auth.network.ApiConfigRt
 import com.trq.muslimapp.databinding.FragmentHomeBinding
 import com.trq.muslimapp.helpers.SharedPreference
-import com.trq.muslimapp.ui.home.admin.AdminActivity
+import com.trq.muslimapp.ui.home.admin.activity.AdminActivity
 import com.trq.muslimapp.ui.home.hijriyah.HijriyahActivity
 import com.trq.muslimapp.ui.home.doaharian.DoaHarianActivity
 import com.trq.muslimapp.ui.home.headline.adapter.BeritaKhutbahAdapter
@@ -30,6 +29,8 @@ import com.trq.muslimapp.ui.home.zakat.ZakatActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
+import java.util.*
 
 class HomeFragment : Fragment() {
 
@@ -64,6 +65,9 @@ class HomeFragment : Fragment() {
             binding.btnListUser.visibility = View.GONE
         }
 
+        val current = SimpleDateFormat("yyyy-MM-dd")
+        val tanggal = current.format(Date())
+        binding.tvTanggal.text = tanggal
 
 //        if (userRole == "admin"){
 //            binding.btnListUser.visibility = View.VISIBLE
@@ -96,7 +100,7 @@ class HomeFragment : Fragment() {
             startActivity(i)
         }
 
-        binding.btnDzikir.setOnClickListener {
+        binding.btnTasbih.setOnClickListener {
             startActivity(Intent(activity, TasbihActivity::class.java))
         }
 

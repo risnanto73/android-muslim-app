@@ -46,6 +46,7 @@ class NoteFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         swipeRefreshLayout.setOnRefreshListener {
             sharedPreference = SharedPreference(requireActivity())
             val user = sharedPreference.getUser()

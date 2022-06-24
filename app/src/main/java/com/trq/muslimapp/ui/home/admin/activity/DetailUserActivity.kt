@@ -1,4 +1,4 @@
-package com.trq.muslimapp.ui.home.admin
+package com.trq.muslimapp.ui.home.admin.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
