@@ -14,24 +14,23 @@
         android:src="@drawable/quran" />
 
     <TextView
-        android:layout_width="wrap_content"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Quran"
-        android:textSize="32dp"
-        android:textColor="#ffffff"
+        android:layout_above="@id/progressBar"
+        android:layout_margin="5dp"
+        android:fontFamily="@font/poppins_regular"
         android:gravity="center"
-        android:layout_below="@+id/imageView" />
-        android:layout_marginTop="32dp" />
+        android:text="Muslim App" />
 
     <ProgressBar
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="18sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:indeterminate="true" />
-
 
 
 </RelativeLayout>

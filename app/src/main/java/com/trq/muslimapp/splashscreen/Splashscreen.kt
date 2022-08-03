@@ -12,6 +12,7 @@ class Splashscreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splashscreen)
+        supportActionBar?.hide()
 
         val handler = Handler()
         handler.postDelayed(Runnable {
